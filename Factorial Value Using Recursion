@@ -1,0 +1,19 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int find(int n)
+{
+
+if(n==1||n==0)
+	return 1;
+return(n*find(n-1));
+}
+int main() 
+{
+	int n;// input
+	cin>>n;
+	int f=find(n);
+	cout<<f;	
+	
+return 0;
+}
