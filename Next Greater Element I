@@ -1,0 +1,26 @@
+class Solution {
+public:
+    vector<int> nextGreaterElement(vector<int>& findNums, vector<int>& nums) {
+        
+        vector<int> ans;
+        bool notFound = true;
+        
+        for(int f:findNums)
+        {
+            vector<int>::iterator iter=find(nums.begin(),nums.end(),f);
+            for( ; iter != nums.end() ; ++iter)
+            {
+                if(*iter > f)
+                {
+                    ans.push_back(*iter);
+                    notFound = false;
+                    break;
+                }
+            }
+            if(notFound)
+                ans.push_back(-1);
+            notFound = true;
+        }
+        return ans;
+    }
+};
